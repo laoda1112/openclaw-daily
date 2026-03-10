@@ -1,0 +1,29 @@
+name: publish
+
+on:
+  schedule:
+    - cron: "0 */2 * * *"
+  workflow_dispatch: {}
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - name: Generate content
+        run: bash generate.sh
+      - name: Deploy (rebuild index)
+        run: bash deploy.sh
+      - name: Commit & push
+        run: |
+          git config user.name "openclaw-bot"
+          git config user.email "bot@openclaw.local"
+          git add -A
+          if git diff --cached --quiet; then
+            echo "No changes"
+            exit 0
+          fi
+          git commit -m "auto publish $(date -u +%Y-%m-%dT%H:%M:%SZ)"
+          git push

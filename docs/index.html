@@ -3,75 +3,16 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>OpenClaw 发布站原型</title>
+  <title>OpenClaw Daily</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <header class="hero">
-    <div class="container">
-      <h1>OpenClaw 发布站</h1>
-      <p class="subtitle">超低内存静态站点原型：轻量、可扩展、成本低</p>
-      <div class="cta">
-        <a class="button" href="#latest">最新发布</a>
-        <a class="button ghost" href="#about">部署说明</a>
-      </div>
-    </div>
-  </header>
-
   <main class="container">
-    <section id="latest" class="card">
-      <h2>最新发布</h2>
-      <ul class="release-list">
-        <li>
-          <strong>2026-03-10</strong> — 发布站点原型上线，支持一键构建与部署。
-        </li>
-        <li>
-          <strong>2026-03-05</strong> — 增加“轻量监控与告警”说明页面。
-        </li>
-      </ul>
-    </section>
-
-    <section class="grid">
-      <div class="card">
-        <h3>站点特点</h3>
-        <ul>
-          <li>纯静态 HTML/CSS，运行时零常驻进程</li>
-          <li>构建仅拷贝文件，几乎零依赖</li>
-          <li>适配低资源环境与 CDN 托管</li>
-        </ul>
-      </div>
-      <div class="card">
-        <h3>部署方式</h3>
-        <ul>
-          <li>Cloudflare Pages（推荐）</li>
-          <li>GitHub Pages / Netlify（备选）</li>
-          <li>本地静态服务器（验收/预览）</li>
-        </ul>
-      </div>
-      <div class="card">
-        <h3>内容扩展</h3>
-        <ul>
-          <li>编辑 <code>src/index.html</code> 更新内容</li>
-          <li>新增页面：直接添加 HTML 文件</li>
-          <li>如需动态能力，接入 Serverless</li>
-        </ul>
-      </div>
-    </section>
-
-    <section id="about" class="card">
-      <h2>部署说明</h2>
-      <ol>
-        <li>运行 <code>./build_site.sh</code> 生成 <code>dist/</code></li>
-        <li>运行 <code>./serve_local.sh</code> 本地预览</li>
-        <li>运行 <code>./deploy_cf_pages.sh</code> 部署到 Cloudflare Pages</li>
-      </ol>
-    </section>
+    <h1>OpenClaw Daily</h1>
+    <p class="muted">每 2 小时一篇 · 自动发布</p>
+    <ul>
+      <li><a href="posts/20260310-2313.html">OpenClaw 新玩法速览 · 20260310-2313 UTC</a></li>
+    </ul>
   </main>
-
-  <footer class="footer">
-    <div class="container">
-      <p>© 2026 OpenClaw 发布站 | 超低内存静态站点原型</p>
-    </div>
-  </footer>
 </body>
 </html>
